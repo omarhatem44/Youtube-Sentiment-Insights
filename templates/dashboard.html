@@ -24,7 +24,8 @@
 async function analyze(){
 
 const text=document.getElementById("comments").value
-const comments=text.split("\n")
+
+const comments=text.split("\n").filter(c=>c.trim()!="")
 
 const response=await fetch("/analyze",{
 method:"POST",
@@ -37,6 +38,10 @@ comments:comments
 })
 
 const data=await response.json()
+
+console.log(data)
+
+}
 
 const ctx=document.getElementById("chart")
 
