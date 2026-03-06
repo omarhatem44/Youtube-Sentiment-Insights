@@ -60,7 +60,7 @@ def preprocess_comment(comment):
 #     with open(vectorizer_path, 'rb') as file:
 #         vectorizer = pickle.load(file)
    
-#     return model, vectorizer
+#    return model, vectorizer
 
 
 
