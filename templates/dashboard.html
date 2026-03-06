@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>YouTube Sentiment Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body style="font-family:Arial;text-align:center">
+<body style="text-align:center;font-family:Arial">
 
-<h1>YouTube Comment Sentiment Analysis</h1>
-
-<p>Paste comments (one comment per line)</p>
+<h1>YouTube Comment Sentiment Dashboard</h1>
 
 <textarea id="comments" style="width:400px;height:200px"></textarea>
 
@@ -27,15 +24,16 @@
 async function analyze(){
 
 const text=document.getElementById("comments").value
+const comments=text.split("\n")
 
-const comments=text.split("\n").filter(c=>c.trim()!="")
-
-const response=await fetch("http://18.205.239.142:5000/analyze",{
+const response=await fetch("/analyze",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
-body:JSON.stringify({comments:comments})
+body:JSON.stringify({
+comments:comments
+})
 })
 
 const data=await response.json()
@@ -52,11 +50,7 @@ data.positive,
 data.neutral,
 data.negative
 ],
-backgroundColor:[
-"#22c55e",
-"#94a3b8",
-"#ef4444"
-]
+backgroundColor:["green","gray","red"]
 }]
 }
 })
