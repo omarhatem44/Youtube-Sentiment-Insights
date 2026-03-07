@@ -38,10 +38,10 @@ Represents text as word frequency vectors.
 Example:
 
 Sentence:
-I love this video
+### I love this video
 
 Vector representation:
-[0,1,0,1,2]
+### [0,1,0,1,2]
 
 
 ---
