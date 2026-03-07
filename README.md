@@ -37,11 +37,11 @@ Represents text as word frequency vectors.
 
 Example:
 
-Sentence:
-### I love this video
+### Sentence:
+I love this video
 
-Vector representation:
-### [0,1,0,1,2]
+### Vector representation:
+[0,1,0,1,2]
 
 
 ---
